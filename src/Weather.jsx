@@ -57,14 +57,18 @@ export default function Weather() {
   };
 
   const handleshow = () => {
-    weatherApi();
-    setinputname("");
+    if(inputname){
+      weatherApi();
+      setinputname("");
+    }
   };
 
   const handleinput2 = (e) => {
     if (e.key === "Enter") {
-      weatherApi();
-      setinputname("");
+      if(inputname){
+        weatherApi();
+        setinputname("");
+      }
     }
   };
 
