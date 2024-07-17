@@ -4,6 +4,7 @@ import { IoSearchSharp } from "react-icons/io5";
 import WeatherOutput from "./WeatherOutput";
 import Copyright from "./Copyright";
 import { ThreeDots } from "react-loader-spinner";
+import { MagnifyingGlass } from "react-loader-spinner";
 
 export default function Weather() {
   const inputField = useRef(null);
@@ -64,6 +65,7 @@ export default function Weather() {
   };
 
   const handleinput2 = (e) => {
+    
     if (e.key === "Enter") {
       if(inputname){
         weatherApi();
@@ -112,6 +114,16 @@ export default function Weather() {
         {cityWrong ? (
           <div className="cityNotFound">
             <h1>City Not Found</h1>
+            <MagnifyingGlass
+            visible={true}
+            height="80"
+            width="80"
+            ariaLabel="magnifying-glass-loading"
+            wrapperStyle={{}}
+            wrapperClass="magnifying-glass-wrapper"
+            glassColor="#c0efff"
+            color="black"
+            />
           </div>
         ) : (
           <WeatherOutput
